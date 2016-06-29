@@ -28,16 +28,17 @@
                     </td>
                 </tr>
                 <!--<tr>-->
-                    <!--<td>chat with</td>-->
-                    <!--<td>-->
-                        <!--<input type="text" ng-model="$storage.chatWith" placeholder="Chat With">-->
-                    <!--</td>-->
+                <!--<td>chat with</td>-->
+                <!--<td>-->
+                <!--<input type="text" ng-model="$storage.chatWith" placeholder="Chat With">-->
+                <!--</td>-->
                 <!--</tr>-->
             </table>
             <div>
                 <button ng-hide="is_connected" ng-click="doConnect()">Connect</button>
                 <button ng-show="is_connected" ng-click="doDisconnect()">Disconnect</button>
             </div>
+            <div>status: {{status}}</div>
 
         </div>
         <div class="nat-settings message" ng-show="is_connected">
