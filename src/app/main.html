@@ -1,7 +1,7 @@
 <div class="main-container">
     <fountain-header></fountain-header>
     <main class="main">
-        <div class="nat-settings">
+        <div class="nat-settings" ng-hide="is_connected">
             <table>
                 <tr>
                     <td>appId</td>
@@ -27,11 +27,23 @@
                         <input type="text" ng-model="$storage.alias" placeholder="">
                     </td>
                 </tr>
+                <tr>
+                    <td>chat with</td>
+                    <td>
+                        <input type="text" ng-model="$storage.chatWith" placeholder="Chat With">
+                    </td>
+                </tr>
                 <!--<tr>-->
-                <!--<td>chat with</td>-->
-                <!--<td>-->
-                <!--<input type="text" ng-model="$storage.chatWith" placeholder="Chat With">-->
-                <!--</td>-->
+                    <!--<td>ON&nbsp; Text</td>-->
+                    <!--<td>-->
+                        <!--<input type="text" ng-model="$storage.onText" placeholder="ON">-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>OFF Text</td>-->
+                    <!--<td>-->
+                        <!--<input type="text" ng-model="$storage.offText" placeholder="OFF">-->
+                    <!--</td>-->
                 <!--</tr>-->
             </table>
             <div>
@@ -39,11 +51,37 @@
                 <button ng-show="is_connected" ng-click="doDisconnect()">Disconnect</button>
             </div>
             <div>status: {{status}}</div>
-
         </div>
-        <div class="nat-settings message" ng-show="is_connected">
-            <div ng-show="is_connected">topic: {{topic}}</div>
-            <div ng-show="is_connected" class="mqtt-message">message: {{message}}</div>
+
+        <div class="the-container" ng-show="is_connected">
+            <input ng-model="switch" type="checkbox" id="toggle"/>
+            <label for="toggle"></label>
+
+            <div class="day-night-cont">
+                <span class="the-sun"></span>
+                <div class="the-moon"><span class="moon-inside"></span></div>
+            </div>
+
+            <div class="switch">
+                <div class="button">
+                    <div class="b-inside"></div>
+                </div>
+            </div>
+
+            <div class="c-window">
+                <span class="the-sun"></span>
+                <span class="the-moon"></span>
+
+                <div class="the-fox">
+                    <div type="button" class="fox-face">
+                        <section class="eyes left"></section>
+                        <section class="eyes right"></section>
+                        <span class="nose"></span>
+                        <div class="white-part"><span class="mouth"></span></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
     <fountain-footer></fountain-footer>

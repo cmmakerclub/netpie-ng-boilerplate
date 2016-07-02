@@ -23,7 +23,26 @@ function MainController($scope, $localStorage) {
         appId: '',
         appKey: '',
         appSecret: '',
-        chatWith: ''
+        onText: 'ON',
+        offText: 'OFF',
+        chatWith: 'plug001',
+        alias: 'html5gear'
+    });
+
+    $storage = $scope.$storage;
+
+    $scope.$watch('switch', function(newVal, oldVal) {
+        console.log("SWITCH CHANGED", arguments);
+        if (newVal === undefined) {
+            return;
+        }
+        var text= {
+            true: $storage.onText,
+            false: $storage.offText,
+        };
+
+        console.log($storage.chatWith, text[newVal]);
+        microgear.chat($storage.chatWith, text[newVal]);
     });
 
     $scope.doDisconnect = function () {

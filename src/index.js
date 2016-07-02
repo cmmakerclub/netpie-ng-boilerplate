@@ -1,2 +1,2 @@
 angular
-  .module('app', ['ngStorage']);
+  .module('app', ['ngStorage', 'ngAnimate']);
